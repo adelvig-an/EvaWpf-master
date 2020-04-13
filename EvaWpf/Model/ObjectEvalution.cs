@@ -10,7 +10,6 @@ namespace EvaWpf.Model
         public string ViewObjectEvalution { get; set; }
         public string TypeObjectEvalution { get; set; }
         public string AddressObjectEvalution { get; set; }
-        public string CadasterNumberObjectEvalution { get; set; }
         public int IndexAddressObjectEvalution { get; set; }
         public string CountryAddressObjectEvalution { get; set; }
         public string RegionAddressObjectEvalution { get; set; }
@@ -19,6 +18,9 @@ namespace EvaWpf.Model
         public string StreetAddressObjectEvalution { get; set; }
         public string NumberHouseAddressObjectEvalution { get; set; }
         public int NumberRoomAddressObjectEvalution { get; set; }
+        public string CadasterNumberObjectEvalution { get; set; }
+        public int CadasterPriceObjectEvalution { get; set; }
+        public int CarryingAmountObjectEvalution { get; set; }
         public int YearConstraction { get; set; }
         public string ExternalMaterial { get; set; }
         public int PhysicalDeterioration { get; set; }
