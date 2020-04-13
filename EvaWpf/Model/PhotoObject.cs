@@ -6,9 +6,9 @@ namespace EvaWpf.Model
 {
     class PhotoObject
     {
-        public int PhotoObjectId { get; set; }
-        public string TitlePhoto { get; set; }
-        public string PositionPhoto { get; set; }
-        public string DescritionPhoto { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Position { get; set; }
+        public string Descrition { get; set; }
     }
 }

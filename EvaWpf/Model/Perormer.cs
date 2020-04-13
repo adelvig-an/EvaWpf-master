@@ -6,17 +6,17 @@ namespace EvaWpf.Model
 {
     class Perormer
     {
-        public int PerormerId { get; set; }
-        public string TypePerformer { get; set; }
-        public string NamePerformer { get; set; }
-        public int OGRNPerformer { get; set; }
-        public int INNPerformer { get; set; }
-        public int KPPPerformer { get; set; }
-        public string InsurancePerormer { get; set; }
-        public string NumberInsurancePerormer { get; set; }
-        public int SumInsurancePerormer { get; set; }
-        public DateTime DateFromInsurancePerormer { get; set; }
-        public DateTime DetaBeforeInsurancePerormer { get; set; }
-        public string AddressPerormer { get; set; }
+        public int Id { get; set; }
+        public string Type { get; set; }
+        public string Name { get; set; }
+        public int OGRN { get; set; }
+        public int INN { get; set; }
+        public int KPP { get; set; }
+        public string Insurance { get; set; }
+        public string Number { get; set; }
+        public int SumInsurance { get; set; }
+        public DateTime DateFrom { get; set; }
+        public DateTime DetaBefore { get; set; }
+        public string Address { get; set; }
     }
 }

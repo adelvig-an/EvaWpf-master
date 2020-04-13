@@ -6,8 +6,8 @@ namespace EvaWpf.Model
 {
     class DocsObject
     {
-        public int DocsObjectId { get; set; }
-        public string TitleDocs { get; set; }
-        public string TitleFileDocs { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string TitleFile { get; set; }
     }
 }

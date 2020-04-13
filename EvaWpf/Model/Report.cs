@@ -4,11 +4,11 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    class Report
+    public class Report
     {
-        public int ReportId { get; set; }
-        public string TitleReport { get; set; }
-        public int NumberReport { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int Number { get; set; }
         public DateTime DateVulation { get; set; }
         public DateTime DateCompilation { get; set; }
     }

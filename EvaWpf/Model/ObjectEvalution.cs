@@ -4,29 +4,29 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    class ObjectEvalution
+    public class ObjectEvalution
     {
-        public int ObjectEvalutionId { get; set; }
-        public string ViewObjectEvalution { get; set; }
-        public string TypeObjectEvalution { get; set; }
-        public string AddressObjectEvalution { get; set; }
-        public int IndexAddressObjectEvalution { get; set; }
-        public string CountryAddressObjectEvalution { get; set; }
-        public string RegionAddressObjectEvalution { get; set; }
-        public string DistrictAddressObjectEvalution { get; set; }
-        public string CityAddressObjectEvalution { get; set; }
-        public string StreetAddressObjectEvalution { get; set; }
-        public string NumberHouseAddressObjectEvalution { get; set; }
-        public int NumberRoomAddressObjectEvalution { get; set; }
-        public string CadasterNumberObjectEvalution { get; set; }
-        public int CadasterPriceObjectEvalution { get; set; }
-        public int CarryingAmountObjectEvalution { get; set; }
+        public int Id { get; set; }
+        public string View { get; set; }
+        public string Type { get; set; }
+        public string Address { get; set; }
+        public int IndexAddress { get; set; }
+        public string Country { get; set; }
+        public string Region { get; set; }
+        public string District { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string NumberHouse { get; set; }
+        public int NumberRoom { get; set; }
+        public string CadasterNumber { get; set; }
+        public int CadasterPrice { get; set; }
+        public int CarryingAmount { get; set; }
         public int YearConstraction { get; set; }
         public string ExternalMaterial { get; set; }
         public int PhysicalDeterioration { get; set; }
         public int Floors { get; set; }
         public string MaterialOverlaps { get; set; }
-        public string DescriptionMaterialOverlaps { get; set; }
+        public string DescriptionOverlaps { get; set; }
         public string TypeBuilding { get; set; }
         public string Electrosupply { get; set; }
         public string ColdWaterSupply { get; set; }
@@ -35,15 +35,15 @@ namespace EvaWpf.Model
         public string GasSupply { get; set; }
         public string Sewerage { get; set; }
         public string WallsMaterial { get; set; }
-        public string DescriptionWallsMaterial { get; set; }
+        public string DescriptionWalls { get; set; }
         public string FloorMaterial { get; set; }
-        public string DescriptionFloorMaterial { get; set; }
+        public string DescriptionFloor { get; set; }
         public string CeilingMaterial { get; set; }
-        public string DescriptionCeilingMaterial { get; set; }
+        public string DescriptionCeiling { get; set; }
         public string DoorMaterial { get; set; }
-        public string DescriptionDoorMaterial { get; set; }
+        public string DescriptionDoor { get; set; }
         public string WindowMaterial { get; set; }
-        public string DescriptionWindowMaterial { get; set; }
+        public string DescriptionWindow { get; set; }
         public int AreaFull { get; set; }
         public int AreaSummer { get; set; }
         public int AreaLiving { get; set; }
@@ -70,24 +70,12 @@ namespace EvaWpf.Model
         public bool RailwayEnd { get; set; }
         public bool Elevator { get; set; }
         public bool GarbageChute { get; set; }
-        public bool ResidentialBuilding { get; set; }
-        public bool ApartHotel { get; set; }
-        public bool PrivateEntranceYes { get; set; }
-        public bool PrivateEntranceNot { get; set; }
+        public bool PrivateEntrance { get; set; }
         public bool Cargo { get; set; }
         public bool Fridge { get; set; }
-        public bool StudioRoom { get; set; }
-        public bool OneRoom {get; set;}
-        public bool TwoRoom { get; set; }
-        public bool ThreeRoom { get; set; }
-        public bool FourRoom { get; set; }
-        public bool FiveRoom { get; set; }
-        public bool MultiRoom { get; set; }
-        public bool RenovationTrue { get; set; }
-        public bool RenovationFalse { get; set; }
-        public bool ConclusionTrue { get; set; }
-        public bool ConclusionFalse { get; set; }
-        public bool UseResidential { get; set; }
-        public bool UseNonResidential { get; set; }
+        public enum TypeRoom { StudioRoom,  OneRoom, TwoRoom, ThreeRoom, FourRoom, FiveRoom, MultiRoom }
+        public bool Renovation { get; set; }
+        public bool Conclusion { get; set; }
+        public bool Usage { get; set; }
     }
 }

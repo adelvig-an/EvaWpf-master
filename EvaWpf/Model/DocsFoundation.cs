@@ -6,9 +6,9 @@ namespace EvaWpf.Model
 {
     class DocsFoundation
     {
-        public int DocsFoundationId { get; set; }
-        public string TitleFoundation { get; set; }
-        public string NumberFoundation { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Number { get; set; }
         public DateTime DateFoundation { get; set; }
     }
 }
