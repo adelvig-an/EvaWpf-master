@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    class DocsFoundation
+    public class DocsFoundation
     {
         public int Id { get; set; }
         public string Title { get; set; }

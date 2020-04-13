@@ -73,7 +73,8 @@ namespace EvaWpf.Model
         public bool PrivateEntrance { get; set; }
         public bool Cargo { get; set; }
         public bool Fridge { get; set; }
-        public enum TypeRoom { StudioRoom,  OneRoom, TwoRoom, ThreeRoom, FourRoom, FiveRoom, MultiRoom }
+        public TypeRoom Room { get; set; }
+        public enum TypeRoom { StudioRoom, OneRoom, TwoRoom, ThreeRoom, FourRoom, FiveRoom, MultiRoom }
         public bool Renovation { get; set; }
         public bool Conclusion { get; set; }
         public bool Usage { get; set; }

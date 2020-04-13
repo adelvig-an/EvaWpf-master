@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    class Appraiser
+    public class Appraiser
     {
         public int Id { get; set; }
         public string SurName { get; set; }

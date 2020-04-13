@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    class PhotoObject
+    public class PhotoObject
     {
         public int Id { get; set; }
         public string Title { get; set; }
