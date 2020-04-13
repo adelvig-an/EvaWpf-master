@@ -59,5 +59,35 @@ namespace EvaWpf.Model
         public string InteriorDecoration { get; set; }
         public string CommunicationSystem { get; set; }
         public string CommunicationСonnecting { get; set; }
+        public bool SpontaneousParking { get; set; }
+        public bool OrganizedParking { get; set; }
+        public bool UndergroundParking { get; set; }
+        public bool FencedTerritory { get; set; }
+        public bool AsphaltCovering { get; set; }
+        public bool CheckPoint { get; set; }
+        public bool FencedSecurityTerritory { get; set; }
+        public bool Playground { get; set; }
+        public bool RailwayEnd { get; set; }
+        public bool Elevator { get; set; }
+        public bool GarbageChute { get; set; }
+        public bool ResidentialBuilding { get; set; }
+        public bool ApartHotel { get; set; }
+        public bool PrivateEntranceYes { get; set; }
+        public bool PrivateEntranceNot { get; set; }
+        public bool Cargo { get; set; }
+        public bool Fridge { get; set; }
+        public bool StudioRoom { get; set; }
+        public bool OneRoom {get; set;}
+        public bool TwoRoom { get; set; }
+        public bool ThreeRoom { get; set; }
+        public bool FourRoom { get; set; }
+        public bool FiveRoom { get; set; }
+        public bool MultiRoom { get; set; }
+        public bool RenovationTrue { get; set; }
+        public bool RenovationFalse { get; set; }
+        public bool ConclusionTrue { get; set; }
+        public bool ConclusionFalse { get; set; }
+        public bool UseResidential { get; set; }
+        public bool UseNonResidential { get; set; }
     }
 }
