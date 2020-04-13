@@ -4,6 +4,17 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
+    public enum TypeRoom 
+    { 
+        StudioRoom, 
+        OneRoom, 
+        TwoRoom, 
+        ThreeRoom, 
+        FourRoom, 
+        FiveRoom, 
+        MultiRoom 
+    }
+
     public class ObjectEvalution
     {
         public int Id { get; set; }
@@ -73,8 +84,7 @@ namespace EvaWpf.Model
         public bool PrivateEntrance { get; set; }
         public bool Cargo { get; set; }
         public bool Fridge { get; set; }
-        public TypeRoom Room { get; set; }
-        public enum TypeRoom { StudioRoom, OneRoom, TwoRoom, ThreeRoom, FourRoom, FiveRoom, MultiRoom }
+        public TypeRoom TypeRoom { get; set; }
         public bool Renovation { get; set; }
         public bool Conclusion { get; set; }
         public bool Usage { get; set; }
