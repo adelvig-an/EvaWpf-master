@@ -12,7 +12,9 @@ namespace EvaWpf
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new SampleVM();
+            DataContext = new MainViewModel();
         }
+
+
     }
 }

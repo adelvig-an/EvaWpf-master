@@ -1,63 +1,22 @@
 ﻿<Window
     x:Class="EvaWpf.MainWindow"
+    xmlns:ui="clr-namespace:EvaWpf.Ui"
+    xmlns:vm="clr-namespace:EvaWpf.VM"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:EvaWpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="EvaProject"
-    Width="800"
+    Width="1000"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:FirstPageVM}">
+            <ui:FirstUi />
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Button
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Command="{Binding AddCommand}"
-            Content="Нажать здесь" />
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding Items}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="5" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <ComboBox
-                                Name="catCmb"
-                                Grid.Row="0"
-                                Margin="5"
-                                DisplayMemberPath="Name"
-                                ItemsSource="{Binding DataContext.Categories, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
-                                SelectedItem="{Binding SelectedCategory}" />
-
-                            <ComboBox
-                                Grid.Row="2"
-                                Margin="5"
-                                DisplayMemberPath="Name"
-                                ItemsSource="{Binding SelectedItem.Items, ElementName=catCmb}"
-                                SelectedItem="{Binding SelectedBuilding}" />
-                        </Grid>
-                        <Button
-                            Grid.Column="1"
-                            MinWidth="120"
-                            Margin="5"
-                            Command="{Binding DataContext.ShowCommand, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
-                            CommandParameter="{Binding}"
-                            Content="Описание" />
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <ContentControl Content="{Binding CurrentPage}" />
     </Grid>
 </Window>

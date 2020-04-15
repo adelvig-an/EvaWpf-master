@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="DbLayer\" />
-    <Folder Include="Ui\" />
   </ItemGroup>
 
 </Project>
