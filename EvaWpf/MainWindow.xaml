@@ -8,7 +8,7 @@
     xmlns:local="clr-namespace:EvaWpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="EvaProject"
-    Width="1000"
+    Width="800"
     Height="450"
     mc:Ignorable="d">
     <Window.Resources>

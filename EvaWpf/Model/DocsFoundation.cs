@@ -10,5 +10,7 @@ namespace EvaWpf.Model
         public string Title { get; set; }
         public string Number { get; set; }
         public DateTime DateFoundation { get; set; }
+        public string Target { get; set; }
+        public string TypeCost { get; set; }
     }
 }
