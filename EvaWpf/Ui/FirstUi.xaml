@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EvaWpf.Ui"
              mc:Ignorable="d" 
-             d:DesignHeight="260" d:DesignWidth="460">
+             d:DesignHeight="260" d:DesignWidth="463">
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
             <RowDefinition Height="Auto" />
@@ -40,36 +41,35 @@
             <ColumnDefinition Width="10" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Номер отчета" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Номер отчета:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <TextBox Grid.Row="1" Grid.Column="3" Width="110" x:Name="NumberReport" />
-        
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Дата оценки" VerticalAlignment="Center" />
+
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Дата оценки:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <DatePicker Grid.Row="3" Grid.Column="3" Width="110" x:Name="DateEva" />
 
-        <TextBlock Grid.Row="5" Grid.Column="1" Text="Дата составления" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Дата составления:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <DatePicker Grid.Row="5" Grid.Column="3" Width="110" x:Name="DateCompilation" />
 
-        <TextBlock Grid.Row="1" Grid.Column="5" Text="Номер договора" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="5" Text="Номер договора:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <TextBox Grid.Row="1" Grid.Column="7" Width="110" x:Name="NumberContract" />
 
-        <TextBlock Grid.Row="3" Grid.Column="5" Text="Дата договора" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="3" Grid.Column="5" Text="Дата договора:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <DatePicker Grid.Row="3" Grid.Column="7" Width="110" x:Name="DateContract" />
 
-        <TextBlock Grid.Row="7" Grid.Column="1" Text="Цель оценки" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="7" Grid.Column="1" Text="Цель оценки:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <TextBox Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="5" x:Name="TargetEva" />
 
-        <TextBlock Grid.Row="9" Grid.Column="1" Text="Вид стоимости" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="9" Grid.Column="1" Text="Вид стоимости:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <ComboBox Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="5" x:Name="TypeCostEva" />
 
-        <TextBlock Grid.Row="11" Grid.Column="1" Text="Оценщик" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="11" Grid.Column="1" Text="Оценщик:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <ComboBox Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="5" />
 
-        <TextBlock Grid.Row="13" Grid.Column="1" Text="Тип заказчика" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="13" Grid.Column="1" Text="Тип заказчика:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <RadioButton Grid.Row="13" Grid.Column="3" Content="Организация" VerticalAlignment="Center" x:Name="PrivatePerson" />
         <RadioButton Grid.Row="13" Grid.Column="5" Grid.ColumnSpan="3" Content="Частное лицо" IsChecked="True" VerticalAlignment="Center" x:Name="Organization" />
 
         <Button Grid.Row="15" Grid.Column="7" Content="Далее >>" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
 
-        
     </Grid>
 </UserControl>
