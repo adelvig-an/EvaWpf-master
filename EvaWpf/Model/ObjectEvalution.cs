@@ -4,15 +4,45 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    public enum TypeRoom 
-    { 
-        StudioRoom, 
-        OneRoom, 
-        TwoRoom, 
-        ThreeRoom, 
-        FourRoom, 
-        FiveRoom, 
-        MultiRoom 
+    public enum TypeRoom
+    {
+        StudioRoom,
+        OneRoom,
+        TwoRoom,
+        ThreeRoom,
+        FourRoom,
+        FiveRoom,
+        MultiRoom
+    }
+
+    public enum PrivateEntrance
+    {
+        PrivateEntrance,
+        SharedEntrance
+    }
+
+    public enum TypeBuilbing
+    {
+        Residential,
+        AartHotel
+    }
+
+    public enum Replanning
+    {
+        Discovered,
+        NotDiscovered
+    }
+
+    public enum Conclusion
+    {
+        Respond,
+        NotRespond
+    }
+
+    public enum Usage
+    {
+        Residental,
+        NonResidental
     }
 
     public class ObjectEvalution
@@ -21,7 +51,7 @@ namespace EvaWpf.Model
         public string View { get; set; }
         public string Type { get; set; }
         public string Address { get; set; }
-        public int IndexAddress { get; set; }
+        public int Index { get; set; }
         public string Country { get; set; }
         public string Region { get; set; }
         public string District { get; set; }
@@ -29,8 +59,8 @@ namespace EvaWpf.Model
         public string Street { get; set; }
         public string NumberHouse { get; set; }
         public int NumberRoom { get; set; }
-        public string CadasterNumber { get; set; }
-        public int CadasterPrice { get; set; }
+        public string NumberCadaster { get; set; }
+        public int PriceCadaster { get; set; }
         public int CarryingAmount { get; set; }
         public int YearConstraction { get; set; }
         public string ExternalMaterial { get; set; }
@@ -81,12 +111,13 @@ namespace EvaWpf.Model
         public bool RailwayEnd { get; set; }
         public bool Elevator { get; set; }
         public bool GarbageChute { get; set; }
-        public bool PrivateEntrance { get; set; }
+        public PrivateEntrance PrivateEntrance { get; set; }
         public bool Cargo { get; set; }
         public bool Fridge { get; set; }
         public TypeRoom TypeRoom { get; set; }
-        public bool Renovation { get; set; }
-        public bool Conclusion { get; set; }
-        public bool Usage { get; set; }
+        public TypeBuilbing TypeBuilbing { get; set; }
+        public Replanning Replanning { get; set; }
+        public Conclusion Conclusion { get; set; }
+        public Usage Usage { get; set; }
     }
 }
