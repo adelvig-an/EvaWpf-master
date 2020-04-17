@@ -9,18 +9,18 @@ namespace EvaWpf.VM
     {
         public FirstPageVM()
         {
+            Report = new Report
+            {
+                Number = 001
+            };
 
+            DocsFoundation = new DocsFoundation
+            {
+                Number = "001/ОЦ"
+            };
         }
-        
 
-        Report report = new Report
-        {
-            Number = 001
-        };
-
-        //DocsFoundation foundation = new DocsFoundation 
-        //{
-        //    Number = "001/ОЦ"
-        //};
+        Report Report { get; }
+        DocsFoundation DocsFoundation { get; }
     }
 }

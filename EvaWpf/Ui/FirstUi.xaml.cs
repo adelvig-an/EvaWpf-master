@@ -22,7 +22,6 @@ namespace EvaWpf.Ui
         public FirstUi()
         {
             InitializeComponent();
-            DataContext = new FirstPageVM();
         }
     }
 }
