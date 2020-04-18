@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EvaWpf.VM
 {
-    class FirstPageVM : PageVM
+    public class FirstPageVM : PageVM
     {
         public FirstPageVM()
         {
