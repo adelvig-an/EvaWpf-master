@@ -13,6 +13,7 @@ namespace EvaWpf.VM
         public IEnumerable<string> TypeCosts { get; }
         public IEnumerable<string> Appraisers { get; }
         public bool IsPrivatePerson { get; set; }
+        public bool IsOrganization { get; set; }
 
         public FirstPageVM()
         {

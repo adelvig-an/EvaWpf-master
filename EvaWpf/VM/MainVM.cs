@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 
 namespace EvaWpf.VM
@@ -25,15 +26,19 @@ namespace EvaWpf.VM
         public void FromFirstPageAction() 
         { 
             if (CurrentPage is FirstPageVM firstPage) 
-            { 
-                if (firstPage.IsPrivatePerson) 
-                { 
-                    CurrentPage = new PrivatePersonVM(); 
-                } 
-                else 
+            {
+                if (firstPage.IsPrivatePerson)
+                {
+                    CurrentPage = new PrivatePersonVM();
+                }
+                else if (firstPage.IsOrganization)
                 { 
                     CurrentPage = new OrganizationVM(); 
-                } 
+                }
+                else
+                {
+                    MessageBox.Show("Выберите Тип клиента!");
+                }
             } 
         }
 

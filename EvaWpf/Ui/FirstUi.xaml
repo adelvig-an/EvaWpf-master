@@ -66,7 +66,7 @@
         <ComboBox Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="5" x:Name="Appraiser" ItemsSource="{Binding Appraisers}" />
 
         <TextBlock Grid.Row="13" Grid.Column="1" Text="Тип заказчика:" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <RadioButton Grid.Row="13" Grid.Column="3" Content="Организация" VerticalAlignment="Center" x:Name="Organization" GroupName="TypeCustomer" IsChecked="{Binding IsPrivatePerson}"  />
+        <RadioButton Grid.Row="13" Grid.Column="3" Content="Организация" VerticalAlignment="Center" x:Name="Organization" GroupName="TypeCustomer" IsChecked="{Binding IsOrganization}" />
         <RadioButton Grid.Row="13" Grid.Column="5" Grid.ColumnSpan="3" Content="Частное лицо" VerticalAlignment="Center" x:Name="PrivatePerson" GroupName="TypeCustomer" IsChecked="{Binding IsPrivatePerson}" />
 
         <Button Grid.Row="15" Grid.Column="7" Content="Далее >>" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Command="{Binding DataContext.FromFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
