@@ -20,7 +20,10 @@ namespace EvaWpf.VM
             };
         }
 
-        Report Report { get; }
-        DocsFoundation DocsFoundation { get; }
+        public Report Report { get; }
+        public DocsFoundation DocsFoundation { get; }
+
+        public IEnumerable<string> TypeCosts { get; }
+        public IEnumerable<string> Appraisers { get; }
     }
 }
