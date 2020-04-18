@@ -45,19 +45,19 @@
         <TextBox Grid.Row="1" Grid.Column="3" Width="110" x:Name="NumberReport" Text="{Binding Report.Number}" />
 
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Дата оценки:" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <DatePicker Grid.Row="3" Grid.Column="3" Width="110" x:Name="DateEva" />
+        <DatePicker Grid.Row="3" Grid.Column="3" Width="110" x:Name="DateEva" SelectedDate="{Binding Report.DateVulation}" />
 
         <TextBlock Grid.Row="5" Grid.Column="1" Text="Дата составления:" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <DatePicker Grid.Row="5" Grid.Column="3" Width="110" x:Name="DateCompilation" />
+        <DatePicker Grid.Row="5" Grid.Column="3" Width="110" x:Name="DateCompilation" SelectedDate="{Binding Report.DateCompilation}" />
 
         <TextBlock Grid.Row="1" Grid.Column="5" Text="Номер договора:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <TextBox Grid.Row="1" Grid.Column="7" Width="110" x:Name="NumberContract" Text="{Binding DocsFoundation.Number}" />
 
         <TextBlock Grid.Row="3" Grid.Column="5" Text="Дата договора:" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <DatePicker Grid.Row="3" Grid.Column="7" Width="110" x:Name="DateContract" />
+        <DatePicker Grid.Row="3" Grid.Column="7" Width="110" x:Name="DateContract" SelectedDate="{Binding Report.DateFoundation}" />
 
         <TextBlock Grid.Row="7" Grid.Column="1" Text="Цель оценки:" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <TextBox Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="5" x:Name="Target" />
+        <TextBox Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="5" x:Name="Target" Text="{Binding DocsFoundation.Target}" />
 
         <TextBlock Grid.Row="9" Grid.Column="1" Text="Вид стоимости:" VerticalAlignment="Center" HorizontalAlignment="Right" />
         <ComboBox Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="5" x:Name="TypeCost" ItemsSource="{Binding TypeCosts}" />
@@ -66,10 +66,10 @@
         <ComboBox Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="5" x:Name="Appraiser" ItemsSource="{Binding Appraisers}" />
 
         <TextBlock Grid.Row="13" Grid.Column="1" Text="Тип заказчика:" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <RadioButton Grid.Row="13" Grid.Column="3" Content="Организация" VerticalAlignment="Center" x:Name="PrivatePerson" />
-        <RadioButton Grid.Row="13" Grid.Column="5" Grid.ColumnSpan="3" Content="Частное лицо" IsChecked="True" VerticalAlignment="Center" x:Name="Organization" />
+        <RadioButton Grid.Row="13" Grid.Column="3" Content="Организация" VerticalAlignment="Center" x:Name="Organization" IsChecked="{Binding IsPrivatePerson}"  />
+        <RadioButton Grid.Row="13" Grid.Column="5" Grid.ColumnSpan="3" Content="Частное лицо" VerticalAlignment="Center" x:Name="PrivatePerson" IsChecked="{Binding IsPrivatePerson}" />
 
-        <Button Grid.Row="15" Grid.Column="7" Content="Далее >>" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+        <Button Grid.Row="15" Grid.Column="7" Content="Далее >>" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Command="{Binding DataContext.FromFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
 
     </Grid>
 </UserControl>

@@ -15,6 +15,12 @@
         <DataTemplate DataType="{x:Type vm:FirstPageVM}">
             <ui:FirstUi />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OrganizationVM}">
+            <ui:OrganizationUC />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PrivatePersonVM}">
+            <ui:PrivatePersonUC />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentPage}" />

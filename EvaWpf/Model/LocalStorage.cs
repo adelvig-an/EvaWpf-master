@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EvaWpf.Model
 {
-    public class LocalStorage
+    public static class LocalStorage
     {
         public static IEnumerable<string> TypeCosts => 
             new string[] 
