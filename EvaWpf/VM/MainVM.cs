@@ -21,8 +21,10 @@ namespace EvaWpf.VM
             FromFirstPage = new RelayCommand(_ => FromFirstPageAction());
         }
 
+        //Команда
         public ICommand FromFirstPage { get; }
-
+        
+        //Условие RadioButton для Button
         public void FromFirstPageAction() 
         { 
             if (CurrentPage is FirstPageVM firstPage) 

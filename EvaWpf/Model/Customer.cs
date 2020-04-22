@@ -20,10 +20,9 @@ namespace EvaWpf.Model
         public string CodeDocs { get; set; }
         public string FormOrganization { get; set; }
         public string NameOrganization { get; set; }
-        public string FullName { get; set; }
-        public int OGRN { get; set; }
+        public long OGRN { get; set; }
         public DateTime DateOrganization { get; set; }
-        public int INN { get; set; }
+        public uint INN { get; set; }
         public int KPP { get; set; }
         public int PaymentAccount { get; set; }
         public string NameBank { get; set; }

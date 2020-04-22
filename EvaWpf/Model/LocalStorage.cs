@@ -21,5 +21,21 @@ namespace EvaWpf.Model
                 "Рошка Андрей Ильевич",
                 "Шестаков Денис Александрович"
             };
+        
+        public static IEnumerable<string> FormOrganizations =>
+            new string[]
+            {
+                "ООО",
+                "ПАО",
+                "АО",
+                "ИП"
+            };
+        public static IEnumerable<string> TypeDocsPos =>
+            new string[]
+            {
+                "Устав",
+                "Доверенность",
+                "Закон"
+            };
     }
 }
