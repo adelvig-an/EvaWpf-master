@@ -8,11 +8,9 @@ namespace EvaWpf.VM
     public class OrganizationVM : PageVM
     {
         public Customer Customer { get; }
-
-        
-
         public IEnumerable<string> FormOrganizations { get; }
         public IEnumerable<string> TypeDocsPos { get; }
+        public bool IsAddressMatch { get; set; }
 
         public OrganizationVM()
         {

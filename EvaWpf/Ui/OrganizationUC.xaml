@@ -141,7 +141,7 @@
             Grid.Row="28" 
             Grid.Column="1" 
             Grid.ColumnSpan="6" 
-            Content="Адрес юридический адрес совпадает с фактическим" />
+            Content="Адрес юридический адрес не совпадает с фактическим" />
 
         <!--Начало блока "Адрес проживания"-->
         <GroupBox 
@@ -152,10 +152,15 @@
             Grid.ColumnSpan="11" 
             Header="Фактический адрес" />
         <TextBlock Text="Адрес полностью:" Grid.Row="32" Grid.Column="2" />
-        <TextBox x:Name="AddressActual" Grid.Row="33" Grid.Column="2" Grid.ColumnSpan="9" />
+        <TextBox 
+            x:Name="AddressActual" 
+            Grid.Row="33" 
+            Grid.Column="2" 
+            Grid.ColumnSpan="9" 
+            Text="{Binding Customer.AddressActual}" IsEnabled="{Binding ElementName=AddressMatch, Path=IsChecked}" />
 
         <TextBlock Text="Индекс" Grid.Row="35" Grid.Column="2" />
-        <TextBox x:Name="IndexActual" Grid.Row="36" Grid.Column="2" Text="{Binding Customer.AddressActual}" />
+        <TextBox x:Name="IndexActual" Grid.Row="36" Grid.Column="2" Text="{Binding Customer.IndexActual}" />
         <TextBlock Text="Страна" Grid.Row="35" Grid.Column="4" />
         <TextBox x:Name="CounryActual" Grid.Row="36" Grid.Column="4" Text="{Binding Customer.CountryActual}" />
         <TextBlock Text="Край/Область" Grid.Row="35" Grid.Column="6" />
