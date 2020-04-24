@@ -46,7 +46,13 @@ namespace EvaWpf.VM
 
         public void FormAddressMatch()
         {
-            
+            if (CurrentPage is OrganizationVM addressmatch)
+            {
+                if (addressmatch.IsAddressMatch)
+                {
+                    
+                }
+            }
         }
 
     }
