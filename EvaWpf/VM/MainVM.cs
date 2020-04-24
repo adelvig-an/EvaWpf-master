@@ -46,16 +46,9 @@ namespace EvaWpf.VM
             } 
         }
 
-        public void FormAddressMatch()
+        public void BackFirstPageAction()
         {
-            if (CurrentPage is OrganizationVM addressmatch)
-            {
-                if (addressmatch.IsAddressMatch)
-                {
-                    
-                }
-            }
+            CurrentPage = new FirstPageVM();
         }
-
     }
 }
