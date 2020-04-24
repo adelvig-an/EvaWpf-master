@@ -151,7 +151,14 @@
         <TextBox x:Name="NumberRoomActual" Grid.Row="33" Grid.Column="6" />
         <!--Конец блока "Адрес проживания"-->
 
-        <Button Content="Вернутья назад" Grid.Row="36" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" VerticalAlignment="Top"/>
+        <Button 
+            Content="Вернутья назад" 
+            Grid.Row="36" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="2" 
+            FontSize="14" 
+            VerticalAlignment="Top"
+            Command="{Binding DataContext.BackFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
         <Button Content="Продолжить" Grid.Row="36" Grid.Column="10" FontSize="14" VerticalAlignment="Top"/>
 
     </Grid>
