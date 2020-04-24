@@ -264,7 +264,18 @@
         </TextBox>
         <!--Конец блока "Адрес проживания"-->
 
-        <Button Content="Вернуться назад" Grid.Row="42" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" VerticalAlignment="Top"/>
+        <Button 
+            Content="Вернуться назад" 
+            Grid.Row="42" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="2" 
+            FontSize="14" 
+            VerticalAlignment="Top"
+<<<<<<< HEAD
+            Command="{Binding DataContext.BackFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
+=======
+            Command="{Binding DataContext.BackPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
+>>>>>>> 6b961f68e48393bd6f02806d1e0d2e006f4340f6
         <Button Content="Продолжить" Grid.Row="42" Grid.Column="10" FontSize="14" VerticalAlignment="Top"/>
 
     </Grid>
