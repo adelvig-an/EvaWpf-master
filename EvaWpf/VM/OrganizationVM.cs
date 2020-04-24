@@ -7,10 +7,44 @@ namespace EvaWpf.VM
 {
     public class OrganizationVM : PageVM
     {
-        public Customer Customer { get; }
+        private bool isAddressMatch;
+
+        public Customer Customer { get; set; }
         public IEnumerable<string> FormOrganizations { get; }
         public IEnumerable<string> TypeDocsPos { get; }
-        public bool IsAddressMatch { get; set; }
+        public bool IsAddressMatch 
+        { 
+            get => isAddressMatch;
+            set
+            {
+                SetProperty(ref isAddressMatch, value);
+                if (value == true)
+                {
+                    Customer.AddressActual = Customer.AddressReg;
+                    Customer.IndexActual = Customer.IndexReg;
+                    Customer.CountryActual = Customer.CountryReg;
+                    Customer.RegionActual = Customer.RegionReg;
+                    Customer.DistrictActual = Customer.DistrictReg;
+                    Customer.CityActual = Customer.CityReg;
+                    Customer.StreetActual = Customer.StreetReg;
+                    Customer.NumberHouseActual = Customer.NumberHouseReg;
+                    Customer.NumberRoomActual = Customer.NumberRoomReg;
+                }
+                else
+                {
+                    Customer.AddressActual = "663091, Красноярский край, Шарыповский район, г. Шарыпово, улица Бочкина, дом 50, помещение 10";
+                    Customer.IndexActual = 663091;
+                    Customer.CountryActual = "Российская Федерация";
+                    Customer.RegionActual = "Красноярский";
+                    Customer.DistrictActual = "Шарыповский";
+                    Customer.CityActual = "Шарыпово";
+                    Customer.StreetActual = "Бочкина";
+                    Customer.NumberHouseActual = "50";
+                    Customer.NumberRoomActual = 10;
+                }
+                OnPropertyChanged(nameof(Customer));
+            } 
+        }
 
         public OrganizationVM()
         {

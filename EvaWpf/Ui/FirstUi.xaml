@@ -67,7 +67,14 @@
         <RadioButton Grid.Row="13" Grid.Column="3" Grid.ColumnSpan="3" Content="Частное лицо" VerticalAlignment="Center" x:Name="PrivatePerson" GroupName="TypeCustomer" IsChecked="{Binding IsPrivatePerson}" />
         <RadioButton Grid.Row="13" Grid.Column="5" Content="Организация" VerticalAlignment="Center" x:Name="Organization" GroupName="TypeCustomer" IsChecked="{Binding IsOrganization}" />
 
-        <Button Grid.Row="15" Grid.Column="7" Content="Продолжить" FontSize="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Command="{Binding DataContext.FromFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
+        <Button 
+            Grid.Row="15" 
+            Grid.Column="7" 
+            Content="Продолжить" 
+            FontSize="14" 
+            VerticalAlignment="Top" 
+            RenderTransformOrigin="0.5,0.5" 
+            Command="{Binding DataContext.FromFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
 
     </Grid>
 </UserControl>

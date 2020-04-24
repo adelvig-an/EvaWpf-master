@@ -19,10 +19,12 @@ namespace EvaWpf.VM
         {
             CurrentPage = new FirstPageVM();
             FromFirstPage = new RelayCommand(_ => FromFirstPageAction());
+            BackFirstPage = new RelayCommand(_ => BackFirstPageAction());
         }
 
         //Команда
         public ICommand FromFirstPage { get; }
+        public ICommand BackFirstPage { get; }
         
         //Условие RadioButton для Button
         public void FromFirstPageAction() 
@@ -44,16 +46,13 @@ namespace EvaWpf.VM
             } 
         }
 
-        public void FormAddressMatch()
+        public void BackFirstPageAction()
         {
-            if (CurrentPage is OrganizationVM addressmatch)
+            if (CurrentPage is OrganizationVM)
             {
-                if (addressmatch.IsAddressMatch)
-                {
-                    
-                }
+                CurrentPage = new FirstPageVM();
             }
+            
         }
-
     }
 }

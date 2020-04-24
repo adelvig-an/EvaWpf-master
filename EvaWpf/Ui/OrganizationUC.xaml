@@ -132,7 +132,7 @@
         <TextBox x:Name="StreetReg" Grid.Row="25" Grid.Column="2" Text="{Binding Customer.StreetReg}" />
         <TextBlock Text="Номер дома" Grid.Row="24" Grid.Column="4" />
         <TextBox x:Name="NumberHouseReg" Grid.Row="25" Grid.Column="4" Text="{Binding Customer.NumberHouseReg}" />
-        <TextBlock Text="Номер квартиры" Grid.Row="24" Grid.Column="6" />
+        <TextBlock Text="Номер помещения" Grid.Row="24" Grid.Column="6" />
         <TextBox x:Name="NumberRoomReg" Grid.Row="25" Grid.Column="6" Text="{Binding Customer.NumberRoomReg}" />
         <!--Конец блока "Адрес регистрации"-->
 
@@ -141,7 +141,8 @@
             Grid.Row="28" 
             Grid.Column="1" 
             Grid.ColumnSpan="6" 
-            Content="Адрес юридический адрес совпадает с фактическим" />
+            Content="Адрес юридический адрес совпадает с фактическим"
+            IsChecked="{Binding IsAddressMatch}"/>
 
         <!--Начало блока "Адрес проживания"-->
         <GroupBox 
@@ -152,33 +153,125 @@
             Grid.ColumnSpan="11" 
             Header="Фактический адрес" />
         <TextBlock Text="Адрес полностью:" Grid.Row="32" Grid.Column="2" />
-        <TextBox 
-            x:Name="AddressActual" 
-            Grid.Row="33" 
-            Grid.Column="2" 
-            Grid.ColumnSpan="9" 
-            Text="{Binding Customer.AddressActual}" />
+        <TextBox x:Name="AddressActual" Grid.Row="33" Grid.Column="2" Grid.ColumnSpan="9" Text="{Binding Customer.AddressActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
 
         <TextBlock Text="Индекс" Grid.Row="35" Grid.Column="2" />
-        <TextBox x:Name="IndexActual" Grid.Row="36" Grid.Column="2" Text="{Binding Customer.IndexActual}" />
+        <TextBox x:Name="IndexActual" Grid.Row="36" Grid.Column="2" Text="{Binding Customer.IndexActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <TextBlock Text="Страна" Grid.Row="35" Grid.Column="4" />
-        <TextBox x:Name="CounryActual" Grid.Row="36" Grid.Column="4" Text="{Binding Customer.CountryActual}" />
+        <TextBox x:Name="CounryActual" Grid.Row="36" Grid.Column="4" Text="{Binding Customer.CountryActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <TextBlock Text="Край/Область" Grid.Row="35" Grid.Column="6" />
-        <TextBox x:Name="RegionActual" Grid.Row="36" Grid.Column="6" Text="{Binding Customer.RegionActual}" />
+        <TextBox x:Name="RegionActual" Grid.Row="36" Grid.Column="6" Text="{Binding Customer.RegionActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <TextBlock Text="Район" Grid.Row="35" Grid.Column="8" />
-        <TextBox x:Name="DistrictActual" Grid.Row="36" Grid.Column="8" Text="{Binding Customer.DistrictActual}" />
+        <TextBox x:Name="DistrictActual" Grid.Row="36" Grid.Column="8" Text="{Binding Customer.DistrictActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <TextBlock Text="Город" Grid.Row="35" Grid.Column="10" />
-        <TextBox x:Name="CityActual" Grid.Row="36" Grid.Column="10" Text="{Binding Customer.CityActual}" />
+        <TextBox x:Name="CityActual" Grid.Row="36" Grid.Column="10" Text="{Binding Customer.CityActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
 
         <TextBlock Text="Улица" Grid.Row="38" Grid.Column="2" />
-        <TextBox x:Name="StreetActual" Grid.Row="39" Grid.Column="2" Text="{Binding Customer.StreetActual}" />
+        <TextBox x:Name="StreetActual" Grid.Row="39" Grid.Column="2" Text="{Binding Customer.StreetActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <TextBlock Text="Номер дома" Grid.Row="38" Grid.Column="4" />
-        <TextBox x:Name="NumberHouseActual" Grid.Row="39" Grid.Column="4" Text="{Binding Customer.NumberHouseActual}" />
-        <TextBlock Text="Номер квартиры" Grid.Row="38" Grid.Column="6" />
-        <TextBox x:Name="NumberRoomActual" Grid.Row="39" Grid.Column="6" Text="{Binding Customer.NumberRoomActual}" />
+        <TextBox x:Name="NumberHouseActual" Grid.Row="39" Grid.Column="4" Text="{Binding Customer.NumberHouseActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBlock Text="Номер помещения" Grid.Row="38" Grid.Column="6" />
+        <TextBox x:Name="NumberRoomActual" Grid.Row="39" Grid.Column="6" Text="{Binding Customer.NumberRoomActual}">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAddressMatch}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <!--Конец блока "Адрес проживания"-->
 
-        <Button Content="Вернуться назад" Grid.Row="42" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" VerticalAlignment="Top"/>
+        <Button 
+            Content="Вернуться назад" 
+            Grid.Row="42" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="2" 
+            FontSize="14" 
+            VerticalAlignment="Top"
+            Command="{Binding DataContext.BackPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
         <Button Content="Продолжить" Grid.Row="42" Grid.Column="10" FontSize="14" VerticalAlignment="Top"/>
 
     </Grid>
