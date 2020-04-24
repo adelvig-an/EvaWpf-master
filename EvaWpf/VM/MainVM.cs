@@ -46,6 +46,7 @@ namespace EvaWpf.VM
             } 
         }
 
+        //Возврат на Первую страницу
         public void BackFirstPageAction()
         {
             CurrentPage = new FirstPageVM();
