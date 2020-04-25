@@ -19,12 +19,13 @@ namespace EvaWpf.VM
         {
             CurrentPage = new FirstPageVM();
             FromFirstPage = new RelayCommand(_ => FromFirstPageAction());
-            BackFirstPage = new RelayCommand(_ => BackFirstPageAction());
+            BackPage = new RelayCommand(_ => BackPageAction());
         }
 
         //Команда
         public ICommand FromFirstPage { get; }
         public ICommand BackFirstPage { get; }
+        public ICommand BackPage { get; }
         
         //Условие RadioButton для Button
         public void FromFirstPageAction() 
@@ -46,9 +47,12 @@ namespace EvaWpf.VM
             } 
         }
 
-        public void BackFirstPageAction()
+        public void BackPageAction()
         {
-            CurrentPage = new FirstPageVM();
+            if (CurrentPage is PrivatePersonVM || CurrentPage is OrganizationVM)
+            {
+                CurrentPage = new FirstPageVM();
+            }
         }
     }
 }

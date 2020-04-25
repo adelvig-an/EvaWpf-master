@@ -4,24 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EvaWpf.Ui"
-             mc:Ignorable="d" d:DesignWidth="700" Height="560">
+             mc:Ignorable="d" d:DesignWidth="700" Height="575">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="24"/>
             <RowDefinition Height="5" />
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="24"/>
             <RowDefinition Height="5" />
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="24"/>
             <RowDefinition Height="5" />
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="24"/>
             <RowDefinition Height="5" />
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="24"/>
             <RowDefinition Height="5" />
             <!--Начало GrouBox "Адрес регистрации" -->
             <RowDefinition Height="5"/>
@@ -74,9 +74,9 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Форма организации:" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" />
-        <ComboBox x:Name="FormOrganization" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Height="18" ItemsSource="{Binding FormOrganizations}" />
+        <ComboBox x:Name="FormOrganization" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding FormOrganizations}" />
         <TextBlock Text="Наименование организации" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" VerticalAlignment="Center" />
-        <TextBox x:Name="TitleOrganization" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="5" Height="18" Text="{Binding Customer.NameOrganization}" />
+        <TextBox x:Name="TitleOrganization" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="5" Text="{Binding Customer.NameOrganization}" />
         <TextBlock Text="Дата регистрации" Grid.Row="1" Grid.Column="10" Grid.ColumnSpan="2" />
         <DatePicker x:Name="DateRegistration" Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="2" SelectedDate="{Binding Customer.DateOrganization}" />
 
@@ -97,12 +97,12 @@
         <TextBlock Text="Отчество" Grid.Row="10" Grid.Column="8" />
         <TextBox x:Name="Lastname" Grid.Row="11" Grid.Column="8" Text="{Binding Customer.LastName}" />
         <TextBlock Text="Документ" Grid.Row="10" Grid.Column="10" Grid.ColumnSpan="2" />
-        <ComboBox x:Name="Article" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="2" Height="18" ItemsSource="{Binding TypeDocsPos}" />
+        <ComboBox x:Name="Article" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="2" ItemsSource="{Binding TypeDocsPos}" />
 
         <TextBlock Text="Серия" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" />
-        <TextBox x:Name="Serial" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" Height="18" Text="{Binding Customer.SerialDocs}" />
+        <TextBox x:Name="Serial" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Customer.SerialDocs}" />
         <TextBlock Text="Номер" Grid.Row="13" Grid.Column="4" />
-        <TextBox x:Name="Humber" Grid.Row="14" Grid.Column="4" Height="18" Text="{Binding Customer.NumberDocs}" />
+        <TextBox x:Name="Humber" Grid.Row="14" Grid.Column="4" Text="{Binding Customer.NumberDocs}" />
         <TextBlock Text="Дата выдачи" Grid.Row="13" Grid.Column="6" />
         <DatePicker x:Name="DateIssue" Grid.Row="14" Grid.Column="6" SelectedDate="{Binding Customer.DateDocs}" />
 
@@ -271,7 +271,7 @@
             Grid.ColumnSpan="2" 
             FontSize="14" 
             VerticalAlignment="Top"
-            Command="{Binding DataContext.BackFirstPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
+            Command="{Binding DataContext.BackPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
         <Button Content="Продолжить" Grid.Row="42" Grid.Column="10" FontSize="14" VerticalAlignment="Top"/>
 
     </Grid>
