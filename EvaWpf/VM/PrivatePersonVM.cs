@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EvaWpf.VM
 {
-    class PrivatePersonVM : PageVM
+    public class PrivatePersonVM : PageVM
     {
         private bool isAddressMatch;
         public Customer Customer { get; set; }

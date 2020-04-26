@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace EvaWpf.Ui
 {
     /// <summary>
-    /// Логика взаимодействия для TypeObjects.xaml
+    /// Логика взаимодействия для TypeObjectsUC.xaml
     /// </summary>
-    public partial class TypeObjects : UserControl
+    public partial class TypeObjectsUC : UserControl
     {
-        public TypeObjects()
+        public TypeObjectsUC()
         {
             InitializeComponent();
         }
