@@ -8,7 +8,6 @@ namespace EvaWpf.VM
     class PrivatePersonVM : PageVM
     {
         private bool isAddressMatch;
-
         public Customer Customer { get; set; }
         public IEnumerable<string> TypeDocs { get; }
         public bool IsAddressMatch

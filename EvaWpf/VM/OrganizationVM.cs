@@ -8,7 +8,6 @@ namespace EvaWpf.VM
     public class OrganizationVM : PageVM
     {
         private bool isAddressMatch;
-
         public Customer Customer { get; set; }
         public IEnumerable<string> FormOrganizations { get; }
         public IEnumerable<string> TypeDocsPos { get; }
@@ -87,8 +86,6 @@ namespace EvaWpf.VM
 
             FormOrganizations = LocalStorage.FormOrganizations;
             TypeDocsPos = LocalStorage.TypeDocsPos;
-
         }
-
     }
 }
