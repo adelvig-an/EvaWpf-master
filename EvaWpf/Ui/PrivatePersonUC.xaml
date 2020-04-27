@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:EvaWpf.Ui"
              mc:Ignorable="d" 
              d:DesignHeight="475" d:DesignWidth="660">
-    <ScrollViewer DataContext="{Binding Scroll}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5" />

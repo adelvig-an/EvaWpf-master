@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace EvaWpf.VM
@@ -36,5 +37,7 @@ namespace EvaWpf.VM
         public ICommand ShowCommand { get; }
 
         public ObservableCollection<ItemVM> Items { get; }
+
+        
     }
 }

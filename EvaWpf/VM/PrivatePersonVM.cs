@@ -10,7 +10,6 @@ namespace EvaWpf.VM
     {
         private bool isAddressMatch;
         public Customer Customer { get; set; }
-        public ScrollViewer Scroll { get; }
         public IEnumerable<string> TypeDocs { get; }
         public bool IsAddressMatch
         {
@@ -81,8 +80,6 @@ namespace EvaWpf.VM
             };
 
             TypeDocs = LocalStorage.TypeDocs;
-            Scroll = new ScrollViewer();
-            Scroll.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
         }
     }
 }
