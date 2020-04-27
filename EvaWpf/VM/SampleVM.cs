@@ -1,6 +1,7 @@
 ﻿using EvaWpf.Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace EvaWpf.VM
@@ -13,6 +14,8 @@ namespace EvaWpf.VM
             ShowCommand = new RelayCommand(p => Show(p as ItemVM), p => p is ItemVM);
             Items = new ObservableCollection<ItemVM>();
             Categories = ListBuilding.Categories;
+            Scroll = new ScrollViewer();
+            Scroll.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
         }
 
         public void Add()
@@ -35,5 +38,8 @@ namespace EvaWpf.VM
         public ICommand ShowCommand { get; }
 
         public ObservableCollection<ItemVM> Items { get; }
+
+        public ScrollViewer Scroll { get; }
+        
     }
 }

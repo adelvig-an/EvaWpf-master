@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace EvaWpf.VM
 {
@@ -9,10 +10,11 @@ namespace EvaWpf.VM
     {
         private bool isAddressMatch;
         public Customer Customer { get; set; }
+        public ScrollViewer Scroll { get; }
         public IEnumerable<string> FormOrganizations { get; }
         public IEnumerable<string> TypeDocsPos { get; }
-        public bool IsAddressMatch 
-        { 
+        public bool IsAddressMatch
+        {
             get => isAddressMatch;
             set
             {
@@ -42,7 +44,7 @@ namespace EvaWpf.VM
                     Customer.NumberRoomActual = 10;
                 }
                 OnPropertyChanged(nameof(Customer));
-            } 
+            }
         }
 
         public OrganizationVM()
@@ -53,15 +55,15 @@ namespace EvaWpf.VM
                 INN = 2461045705,
                 KPP = 246101001,
                 OGRN = 1202400004047,
-                DateOrganization = new DateTime (2020, 02, 18),
-                
+                DateOrganization = new DateTime(2020, 02, 18),
+
                 Position = "Директор",
                 SurName = "Иванов",
                 FirstName = "Петр",
                 LastName = "Сергеевич",
                 SerialDocs = "12 АК",
                 NumberDocs = 151,
-                DateDocs = new DateTime (2019, 01, 10),
+                DateDocs = new DateTime(2019, 01, 10),
 
                 AddressReg = "660094, Красноярский край, город Красноярск, улица Щорса, дом 34В, офис 5",
                 IndexReg = 660094,
@@ -86,6 +88,10 @@ namespace EvaWpf.VM
 
             FormOrganizations = LocalStorage.FormOrganizations;
             TypeDocsPos = LocalStorage.TypeDocsPos;
+
+            Scroll = new ScrollViewer();
+            Scroll.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
         }
+
     }
 }

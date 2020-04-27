@@ -19,18 +19,20 @@
         <ItemsControl Grid.Row="1" ItemsSource="{Binding Items}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="5" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <ComboBox
+                    <StackPanel>
+                        <ScrollViewer DataContext="{Binding Scroll}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="5" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <ComboBox
                                 Name="catCmb"
                                 Grid.Row="0"
                                 Margin="5"
@@ -38,21 +40,23 @@
                                 ItemsSource="{Binding DataContext.Categories, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
                                 SelectedItem="{Binding SelectedCategory}" />
 
-                            <ComboBox
+                                    <ComboBox
                                 Grid.Row="2"
                                 Margin="5"
                                 DisplayMemberPath="Name"
                                 ItemsSource="{Binding SelectedItem.Items, ElementName=catCmb}"
                                 SelectedItem="{Binding SelectedBuilding}" />
-                        </Grid>
-                        <Button
+                                </Grid>
+                                <Button
                             Grid.Column="1"
                             MinWidth="120"
                             Margin="5"
                             Command="{Binding DataContext.ShowCommand, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
                             CommandParameter="{Binding}"
                             Content="Описание" />
-                    </Grid>
+                            </Grid>
+                        </ScrollViewer>
+                    </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

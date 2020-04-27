@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:EvaWpf.Ui"
              mc:Ignorable="d" 
              d:DesignHeight="475" d:DesignWidth="660">
+    <ScrollViewer DataContext="{Binding Scroll}">
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="5" />
             <RowDefinition Height="Auto" />
@@ -250,13 +250,13 @@
             FontSize="14" 
             VerticalAlignment="Top"
             Command="{Binding DataContext.BackPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
-        <Button 
+            <Button 
             Content="Продолжить" 
             Grid.Row="36" 
             Grid.Column="10" 
             FontSize="14" 
             VerticalAlignment="Top"
             Command="{Binding DataContext.NextPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
-
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
