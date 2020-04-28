@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace EvaWpf.VM
@@ -17,9 +16,11 @@ namespace EvaWpf.VM
             Categories = ListBuilding.Categories;
         }
 
+        
+
         public void Add()
         {
-            Items.Add(new ItemVM());
+            Items.Add(new ItemVM(nameof(ButtonContent)));
         }
 
         public void Show(ItemVM item)
@@ -37,7 +38,17 @@ namespace EvaWpf.VM
         public ICommand ShowCommand { get; }
 
         public ObservableCollection<ItemVM> Items { get; }
-
         
+        private int n = 1;
+        public string ButtonContent 
+        { 
+            get => ButtonContent; 
+            set
+            {
+                ButtonContent = "Описание объекта" + n;
+                n++;
+            }
+        }
+
     }
 }
