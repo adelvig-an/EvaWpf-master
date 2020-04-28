@@ -52,7 +52,7 @@
                             Margin="5"
                             Command="{Binding DataContext.ShowCommand, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
                             CommandParameter="{Binding}"
-                            Content="{Binding IsNameButton}" />
+                            Content="{Binding ButtonContent}" />
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
