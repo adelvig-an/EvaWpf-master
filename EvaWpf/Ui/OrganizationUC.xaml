@@ -5,56 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EvaWpf.Ui"
              mc:Ignorable="d" d:DesignWidth="800" Height="410">
+    <UserControl.Resources>
+    <Style TargetType="TextBox">
+        <Setter Property="Height" Value="24" />
+    </Style>
+    </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="24"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="24"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="24"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="24"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="24"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
                 <!--Начало GrouBox "Адрес регистрации" -->
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="15"/>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="10" />
                 <!--Конец GrouBox "Адрес регистрации" -->
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
                 <!--Начало GrouBox "Адрес проживания" -->
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="15"/>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="10" />
                 <!--Конец GrouBox "Адрес проживания" -->
                 <RowDefinition Height="5" />
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>

@@ -16,11 +16,9 @@ namespace EvaWpf.VM
             Categories = ListBuilding.Categories;
         }
 
-        
-
         public void Add()
         {
-            Items.Add(new ItemVM(nameof(ButtonContent)));
+            Items.Add(new ItemVM());
         }
 
         public void Show(ItemVM item)
@@ -40,13 +38,18 @@ namespace EvaWpf.VM
         public ObservableCollection<ItemVM> Items { get; }
         
         private int n = 1;
-        public string ButtonContent 
-        { 
-            get => ButtonContent; 
+        
+        private string buttonContent;
+        
+        public string ButtonContent
+        {
+            get => buttonContent;
             set
             {
+                SetProperty(ref buttonContent, value);
                 ButtonContent = "Описание объекта" + n;
                 n++;
+                OnPropertyChanged();
             }
         }
 
