@@ -11,47 +11,21 @@ namespace EvaWpf.VM
         public TypeObjectsVM()
         {
             AddCommand = new RelayCommand(_ => Add());
-            ShowCommand = new RelayCommand(p => Show(p as ItemVM), p => p is ItemVM);
             Items = new ObservableCollection<ItemVM>();
             Categories = ListBuilding.Categories;
         }
 
+        public int n = 1;
         public void Add()
         {
-            Items.Add(new ItemVM());
-        }
-
-        public void Show(ItemVM item)
-        {
-            // Это нарушает MVVM и в реальном проекте так делать нельзя
-            // но поскольку это демонстрационный пример 
-            // выводим просто сообщение
-            System.Windows.MessageBox.Show($"Info: {item?.SelectedBuilding}");
+            Items.Add(new ItemVM("Описание объекта " + n));
+            n++;
         }
 
         public IEnumerable<Category> Categories { get; }
 
         public ICommand AddCommand { get; }
 
-        public ICommand ShowCommand { get; }
-
         public ObservableCollection<ItemVM> Items { get; }
-        
-        private int n = 1;
-        
-        private string buttonContent;
-        
-        public string ButtonContent
-        {
-            get => buttonContent;
-            set
-            {
-                SetProperty(ref buttonContent, value);
-                ButtonContent = "Описание объекта" + n;
-                n++;
-                OnPropertyChanged();
-            }
-        }
-
     }
 }

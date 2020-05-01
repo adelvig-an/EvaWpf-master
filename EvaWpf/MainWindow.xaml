@@ -24,6 +24,9 @@
         <DataTemplate DataType="{x:Type vm:TypeObjectsVM}">
             <ui:TypeObjectsUC />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ApartmentVM}">
+            <ui:ApartmentUC />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentPage}" />

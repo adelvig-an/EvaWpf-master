@@ -50,7 +50,7 @@
                             Grid.Column="1"
                             MinWidth="120"
                             Margin="5"
-                            Command="{Binding DataContext.ShowCommand, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
+                            Command="{Binding DataContext.ShowObjects, RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}"
                             CommandParameter="{Binding}"
                             Content="{Binding ButtonContent}" />
                         </Grid>
