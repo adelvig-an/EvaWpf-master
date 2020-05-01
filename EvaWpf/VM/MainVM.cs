@@ -69,101 +69,101 @@ namespace EvaWpf.VM
 
         public void ShowAction(ItemVM item)
         {
-            if (item.SelectedCategory.Name == "Жилое помещение")
+            if (item.SelectedCategory.ToString() == "Жилое помещение")
             {
-                if (item.SelectedBuilding.Name == "Квартира")
+                if (item.SelectedBuilding.ToString() == "Квартира")
                 {
                     CurrentPage = new ApartmentVM();
                 }
             }
-            else if (item.SelectedCategory.Name == "Нежилое помещение")
+            else if (item.SelectedCategory.ToString() == "Нежилое помещение")
             {
-                if (item.SelectedBuilding.Name == "Офисно-торговый объект свободного назначения")
+                if (item.SelectedBuilding.ToString() == "Офисно-торговый объект свободного назначения")
                 {
                     MessageBox.Show("Офисно-торговый объект свободного назначения");
                 }
-                else if (item.SelectedBuilding.Name == "Офисы класса А, В")
+                else if (item.SelectedBuilding.ToString() == "Офисы класса А, В")
                 {
                     MessageBox.Show("Офисы класса А, В");
                 }
-                else if (item.SelectedBuilding.Name == "Торговая недвижимость")
+                else if (item.SelectedBuilding.ToString() == "Торговая недвижимость")
                 {
                     MessageBox.Show("Торговая недвижимость");
                 }
-                else if (item.SelectedBuilding.Name == "Производственно-складская недвижимость")
+                else if (item.SelectedBuilding.ToString() == "Производственно-складская недвижимость")
                 {
                     MessageBox.Show("Производственно-складская недвижимость");
                 }
             }
-            else if (item.SelectedCategory.Name == "Здание")
+            else if (item.SelectedCategory.ToString() == "Здание")
             {
-                if (item.SelectedBuilding.Name == "Жилой дом")
+                if (item.SelectedBuilding.ToString() == "Жилой дом")
                 {
                     MessageBox.Show("Здание! Жилой дом");
                 }
-                else if (item.SelectedBuilding.Name == "Офисно-торговый объект свободного назначения")
+                else if (item.SelectedBuilding.ToString() == "Офисно-торговый объект свободного назначения")
                 {
                     MessageBox.Show("Здание! Офисно-торговый объект свободного назначения");
                 }
-                else if (item.SelectedBuilding.Name == "Офисы класса А, В")
+                else if (item.SelectedBuilding.ToString() == "Офисы класса А, В")
                 {
                     MessageBox.Show("Здание! Офисы класса А, В");
                 }
-                else if (item.SelectedBuilding.Name == "Торговая недвижимость")
+                else if (item.SelectedBuilding.ToString() == "Торговая недвижимость")
                 {
                     MessageBox.Show("Здание! Торговая недвижимость");
                 }
-                else if (item.SelectedBuilding.Name == "Производственно-складская недвижимость")
+                else if (item.SelectedBuilding.ToString() == "Производственно-складская недвижимость")
                 {
                     MessageBox.Show("Здание! Производственно-складская недвижимость");
                 }
             }
-            else if (item.SelectedCategory.Name == "Здание с земельным участком")
+            else if (item.SelectedCategory.ToString() == "Здание с земельным участком")
             {
-                if (item.SelectedBuilding.Name == "Жилой дом")
+                if (item.SelectedBuilding.ToString() == "Жилой дом")
                 {
                     MessageBox.Show("Здание с земельным участком! Жилой дом");
                 }
-                else if (item.SelectedBuilding.Name == "Офисно-торговый объект свободного назначения")
+                else if (item.SelectedBuilding.ToString() == "Офисно-торговый объект свободного назначения")
                 {
                     MessageBox.Show("Здание с земельным участком! Офисно-торговый объект свободного назначения");
                 }
-                else if (item.SelectedBuilding.Name == "Офисы класса А, В")
+                else if (item.SelectedBuilding.ToString() == "Офисы класса А, В")
                 {
                     MessageBox.Show("Здание с земельным участком! Офисы класса А, В");
                 }
-                else if (item.SelectedBuilding.Name == "Торговая недвижимость")
+                else if (item.SelectedBuilding.ToString() == "Торговая недвижимость")
                 {
                     MessageBox.Show("Здание с земельным участком! Торговая недвижимость");
                 }
-                else if (item.SelectedBuilding.Name == "Производственно-складская недвижимость")
+                else if (item.SelectedBuilding.ToString() == "Производственно-складская недвижимость")
                 {
                     MessageBox.Show("Здание с земельным участком! Производственно-складская недвижимость");
                 }
             }
-            else if (item.SelectedCategory.Name == "Земельный участок")
+            else if (item.SelectedCategory.ToString() == "Земельный участок")
             {
-                if (item.SelectedBuilding.Name == "Под индустриальную застройку")
+                if (item.SelectedBuilding.ToString() == "Под индустриальную застройку")
                 {
                     MessageBox.Show("Под индустриальную застройку");
                 }
-                else if (item.SelectedBuilding.Name == "Под офисно-торговую застройку")
+                else if (item.SelectedBuilding.ToString() == "Под офисно-торговую застройку")
                 {
                     MessageBox.Show("Под офисно-торговую застройку");
                 }
-                else if (item.SelectedBuilding.Name == "Под многоквартирную жилую застройку")
+                else if (item.SelectedBuilding.ToString() == "Под многоквартирную жилую застройку")
                 {
                     MessageBox.Show("Под многоквартирную жилую застройку");
                 }
-                else if (item.SelectedBuilding.Name == "Под индивидуальную жилую застройку")
+                else if (item.SelectedBuilding.ToString() == "Под индивидуальную жилую застройку")
                 {
                     MessageBox.Show("Под индивидуальную жилую застройку");
                 }
-                else if (item.SelectedBuilding.Name == "Под объекты рекреации")
+                else if (item.SelectedBuilding.ToString() == "Под объекты рекреации")
                 {
                     MessageBox.Show("Под объекты рекреации");
                 }
-                else if (item.SelectedBuilding.Name == "Под объекты придорожного сервиса")
+                else if (item.SelectedBuilding.ToString() == "Под объекты придорожного сервиса")
                 {
                     MessageBox.Show("Под объекты придорожного сервиса");
                 }
