@@ -22,7 +22,7 @@ namespace EvaWpf.VM
             n++;
         }
 
-        public IEnumerable<Category> Categories { get; }
+        public IEnumerable<Category> Categories { get; set; }
 
         public ICommand AddCommand { get; }
 

@@ -57,6 +57,10 @@ namespace EvaWpf.VM
             {
                 CurrentPage = new FirstPageVM();
             }
+            else if (CurrentPage is ApartmentVM)
+            {
+                CurrentPage = new TypeObjectsVM();
+            }
         }
 
         public void NextPageAction()
@@ -69,9 +73,9 @@ namespace EvaWpf.VM
 
         public void ShowAction(ItemVM item)
         {
-            if (item.SelectedCategory.ToString() == "Жилое помещение")
+            if (item?.SelectedCategory.ToString() == "Жилая недвижимость")
             {
-                if (item.SelectedBuilding.ToString() == "Квартира")
+                if (item?.SelectedBuilding.ToString() == "Квартира")
                 {
                     CurrentPage = new ApartmentVM();
                 }
