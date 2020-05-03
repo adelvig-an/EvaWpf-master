@@ -373,6 +373,7 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="10" />
+                            <RowDefinition Height="10" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="10" />
@@ -388,7 +389,7 @@
 
                         <GroupBox
                             Grid.Row="1"
-                            Grid.RowSpan="4"
+                            Grid.RowSpan="5"
                             Grid.Column="1"
                             Grid.ColumnSpan="7"
                             Header="Площадь, кв.м." />
@@ -420,7 +421,7 @@
 
                         <GroupBox
                             Grid.Row="6"
-                            Grid.RowSpan="4"
+                            Grid.RowSpan="22"
                             Grid.Column="1"
                             Grid.ColumnSpan="7"
                             Header="Описание объекта" />
