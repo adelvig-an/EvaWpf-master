@@ -1,11 +1,13 @@
-﻿<UserControl x:Class="EvaWpf.Ui.ApartmentUC"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:EvaWpf.Ui"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+﻿<UserControl
+    x:Class="EvaWpf.Ui.ApartmentUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EvaWpf.Ui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
     <UserControl.Resources>
         <Style TargetType="TextBox">
             <Setter Property="Height" Value="24" />
@@ -15,224 +17,618 @@
         </Style>
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <TabControl>
-            <TabItem Header="Местоположение">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <!--Тут GroupBox-->
-                        <RowDefinition Height="10" />
-                        <!--Тут содержимое GoupBox-->
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="10" />
-                    </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Адрес полностью (город, улица, дом, квартира):" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" />
-                    <TextBox x:Name="AddressFull" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="7" />
+            <Button
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                Command="{Binding DataContext.BackPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
+                Content="Вернуться назад"
+                FontSize="14" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                VerticalAlignment="Top"
+                Command="{Binding}"
+                Content="Продолжить"
+                FontSize="14" />
 
-                    <TextBlock Text="Кадастровый номер:" Grid.Row="4" Grid.Column="2" />
-                    <TextBox x:Name="CadastrNumber" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" />
+            <TabControl Grid.ColumnSpan="2">
+                <TabItem Header="Местоположение">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <!--  Тут GroupBox  -->
+                            <RowDefinition Height="10" />
+                            <!--  Тут содержимое GoupBox  -->
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Индекс" Grid.Row="7" Grid.Column="2" />
-                    <TextBox x:Name="Index" Grid.Row="8" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="3"
+                            Text="Адрес полностью (город, улица, дом, квартира):" />
+                        <TextBox
+                            x:Name="AddressFull"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="7" />
 
-                    <TextBlock Text="Страна" Grid.Row="10" Grid.Column="2" />
-                    <TextBox x:Name="Country" Grid.Row="11" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="2"
+                            Text="Кадастровый номер:" />
+                        <TextBox
+                            x:Name="CadastrNumber"
+                            Grid.Row="5"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="3" />
 
-                    <TextBlock Text="Край/Область" Grid.Row="13" Grid.Column="2" />
-                    <TextBox x:Name="Region" Grid.Row="14" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="2"
+                            Text="Индекс" />
+                        <TextBox
+                            x:Name="Index"
+                            Grid.Row="8"
+                            Grid.Column="2" />
 
-                    <TextBlock Text="Район" Grid.Row="16" Grid.Column="2" />
-                    <TextBox x:Name="District" Grid.Row="17" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="2"
+                            Text="Страна" />
+                        <TextBox
+                            x:Name="Country"
+                            Grid.Row="11"
+                            Grid.Column="2" />
 
-                    <TextBlock Text="Город" Grid.Row="7" Grid.Column="4" />
-                    <TextBox x:Name="Citys" Grid.Row="8" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="2"
+                            Text="Край/Область" />
+                        <TextBox
+                            x:Name="Region"
+                            Grid.Row="14"
+                            Grid.Column="2" />
 
-                    <TextBlock Text="Улица" Grid.Row="10" Grid.Column="4" />
-                    <TextBox x:Name="Street" Grid.Row="11" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="16"
+                            Grid.Column="2"
+                            Text="Район" />
+                        <TextBox
+                            x:Name="District"
+                            Grid.Row="17"
+                            Grid.Column="2" />
 
-                    <TextBlock Text="Номер дома" Grid.Row="13" Grid.Column="4" />
-                    <TextBox x:Name="NumberHouse" Grid.Row="14" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="4"
+                            Text="Город" />
+                        <TextBox
+                            x:Name="Citys"
+                            Grid.Row="8"
+                            Grid.Column="4" />
 
-                    <TextBlock Text="Номер квартиры" Grid.Row="16" Grid.Column="4" />
-                    <TextBox x:Name="NumberRoom" Grid.Row="17" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="4"
+                            Text="Улица" />
+                        <TextBox
+                            x:Name="Street"
+                            Grid.Row="11"
+                            Grid.Column="4" />
 
-                    <WebBrowser Grid.Column="6" Grid.RowSpan="14" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="#FF191717" />
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="4"
+                            Text="Номер дома" />
+                        <TextBox
+                            x:Name="NumberHouse"
+                            Grid.Row="14"
+                            Grid.Column="4" />
 
-                    <GroupBox x:Name="Specifications" Header="Описание дома и территории" Grid.Row="18" Grid.RowSpan="16" Grid.Column="1" Grid.ColumnSpan="9" />
+                        <TextBlock
+                            Grid.Row="16"
+                            Grid.Column="4"
+                            Text="Номер квартиры" />
+                        <TextBox
+                            x:Name="NumberRoom"
+                            Grid.Row="17"
+                            Grid.Column="4" />
 
-                    <TextBlock Text="Год постройки" Grid.Row="20" Grid.Column="2" />
-                    <TextBox x:Name="YearConstraction" Grid.Row="21" Grid.Column="2" />
+                        <WebBrowser
+                            Grid.Row="4"
+                            Grid.RowSpan="14"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="3"
+                            OpacityMask="#FF191717" />
 
-                    <TextBlock Text="Физический износ(%)" Grid.Row="20" Grid.Column="8" />
-                    <TextBox x:Name="Wear" Grid.Row="21" Grid.Column="8" />
+                        <GroupBox
+                            x:Name="Specifications"
+                            Grid.Row="18"
+                            Grid.RowSpan="16"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="9"
+                            Header="Описание дома и территории" />
 
-                    <TextBlock Text="Материал наружных стен" Grid.Row="20" Grid.Column="4" />
-                    <ComboBox x:Name="MaterialWall" Grid.Row="21" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="20"
+                            Grid.Column="2"
+                            Text="Год постройки" />
+                        <TextBox
+                            x:Name="YearConstraction"
+                            Grid.Row="21"
+                            Grid.Column="2" />
 
-                    <Button Content="Расчитать износ" Grid.Row="21" Grid.Column="6" />
+                        <TextBlock
+                            Grid.Row="20"
+                            Grid.Column="8"
+                            Text="Физический износ(%)" />
+                        <TextBox
+                            x:Name="Wear"
+                            Grid.Row="21"
+                            Grid.Column="8" />
 
-                    <TextBlock Text="Тип здания" Grid.Row="23" Grid.Column="2" />
-                    <RadioButton Content="Жилой дом" Name="ResidentaBuilding" Grid.Row="23" Grid.Column="4" />
-                    <RadioButton Content="Апарт-отель" Name="ApartHotel" Grid.Row="24" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="20"
+                            Grid.Column="4"
+                            Text="Материал наружных стен" />
+                        <ComboBox
+                            x:Name="MaterialWall"
+                            Grid.Row="21"
+                            Grid.Column="4" />
 
-                    <TextBlock Text="Число этажей" Grid.Row="23" Grid.Column="6" />
-                    <TextBox x:Name="Floors" Grid.Row="24" Grid.Column="6" />
+                        <Button
+                            Grid.Row="21"
+                            Grid.Column="6"
+                            Content="Расчитать износ" />
 
-                    <TextBlock Text="Материал перекрытий" Grid.Row="26" Grid.Column="2" />
-                    <ComboBox x:Name="MaterialOverlaps" Grid.Row="27" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="23"
+                            Grid.Column="2"
+                            Text="Тип здания" />
+                        <RadioButton
+                            Name="ResidentaBuilding"
+                            Grid.Row="23"
+                            Grid.Column="4"
+                            Content="Жилой дом" />
+                        <RadioButton
+                            Name="ApartHotel"
+                            Grid.Row="24"
+                            Grid.Column="4"
+                            Content="Апарт-отель" />
 
-                    <TextBlock Text="Состояние дома" Grid.Row="26" Grid.Column="4" />
-                    <ComboBox x:Name="ConditionBuilnding" Grid.Row="27" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="23"
+                            Grid.Column="6"
+                            Text="Число этажей" />
+                        <TextBox
+                            x:Name="Floors"
+                            Grid.Row="24"
+                            Grid.Column="6" />
 
-                    <TextBlock Text="Планы на снос/реконструкцию" Grid.Row="26" Grid.Column="6" />
-                    <ComboBox x:Name="Reconstruction" Grid.Row="27" Grid.Column="6" />
+                        <TextBlock
+                            Grid.Row="26"
+                            Grid.Column="2"
+                            Text="Материал перекрытий" />
+                        <ComboBox
+                            x:Name="MaterialOverlaps"
+                            Grid.Row="27"
+                            Grid.Column="2" />
 
-                    <TextBlock Text="Горячее водоснабжение" Grid.Row="29" Grid.Column="2" />
-                    <ComboBox x:Name="HotWater" Grid.Row="30" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="26"
+                            Grid.Column="4"
+                            Text="Состояние дома" />
+                        <ComboBox
+                            x:Name="ConditionBuilnding"
+                            Grid.Row="27"
+                            Grid.Column="4" />
 
-                    <TextBlock Text="Газоснабжение" Grid.Row="29" Grid.Column="4" />
-                    <ComboBox x:Name="GasSapply" Grid.Row="30" Grid.Column="4" />
+                        <TextBlock
+                            Grid.Row="26"
+                            Grid.Column="6"
+                            Text="Планы на снос/реконструкцию" />
+                        <ComboBox
+                            x:Name="Reconstruction"
+                            Grid.Row="27"
+                            Grid.Column="6" />
 
-                    <TextBlock Text="Благоустройство дома" Grid.Row="29" Grid.Column="6" />
-                    <CheckBox Content="Лифт" Grid.Row="29" Grid.Column="8" />
-                    <CheckBox Content="Мусоропровод" Grid.Row="30" Grid.Column="8" />
+                        <TextBlock
+                            Grid.Row="29"
+                            Grid.Column="2"
+                            Text="Горячее водоснабжение" />
+                        <ComboBox
+                            x:Name="HotWater"
+                            Grid.Row="30"
+                            Grid.Column="2" />
 
-                    <Canvas Grid.Row="32" Grid.Column="2" Grid.ColumnSpan="7">
+                        <TextBlock
+                            Grid.Row="29"
+                            Grid.Column="4"
+                            Text="Газоснабжение" />
+                        <ComboBox
+                            x:Name="GasSapply"
+                            Grid.Row="30"
+                            Grid.Column="4" />
 
-                        <CheckBox Content="Стихийная парковка" />
-                        <CheckBox Content="Детская площадка" Canvas.Left="402" Canvas.Top="20" />
-                        <CheckBox Content="Огороженная территория" Canvas.Left="138" />
-                        <CheckBox Content="Асфальтовое покрытие" Canvas.Left="248" Canvas.Top="20" />
+                        <TextBlock
+                            Grid.Row="29"
+                            Grid.Column="6"
+                            Text="Благоустройство дома" />
+                        <CheckBox
+                            Grid.Row="29"
+                            Grid.Column="8"
+                            Content="Лифт" />
+                        <CheckBox
+                            Grid.Row="30"
+                            Grid.Column="8"
+                            Content="Мусоропровод" />
 
-                        <CheckBox Content="Огороженная территория и КПП" Canvas.Left="547" />
-                        <CheckBox Content="Огороженная и охраняемая территория" Canvas.Top="20" />
-                        <CheckBox Content="Организованная охраняемая парковка" Canvas.Left="307" />
-                    </Canvas>
+                        <Canvas
+                            Grid.Row="32"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="7"
+                            Height="40">
 
-                    <Button 
-                    Content="Вернуться назад" 
-                    Grid.Row="35" 
-                    Grid.Column="2"
-                    FontSize="14" 
-                    VerticalAlignment="Top"
-                    Command="{Binding DataContext.BackPage, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
+                            <CheckBox Content="Стихийная парковка" />
+                            <CheckBox
+                                Canvas.Left="454"
+                                Canvas.Top="20"
+                                Content="Детская площадка" />
+                            <CheckBox Canvas.Left="138" Content="Огороженная территория" />
+                            <CheckBox Canvas.Left="547" Content="Асфальтовое покрытие" />
 
-                    <Button 
-                    Content="Прейти к расчету" 
-                    Grid.Row="35" 
-                    Grid.Column="8"
-                    FontSize="14" 
-                    VerticalAlignment="Top"
-                    Command="{Binding}" />
-                </Grid>
-            </TabItem>
-            <TabItem Header="Объект" >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="10" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="10" />
-                    </Grid.ColumnDefinitions>
+                            <CheckBox
+                                Canvas.Left="248"
+                                Canvas.Top="20"
+                                Content="Огороженная территория и КПП" />
+                            <CheckBox Canvas.Top="20" Content="Огороженная и охраняемая территория" />
+                            <CheckBox Canvas.Left="307" Content="Организованная охраняемая парковка" />
+                        </Canvas>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Объект">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
 
-                    <GroupBox Header="Площадь, кв.м." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="4" />
+                        <GroupBox
+                            Grid.Row="1"
+                            Grid.RowSpan="4"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="7"
+                            Header="Площадь, кв.м." />
 
-                    <TextBlock Text="Общая" Grid.Row="3" Grid.Column="2" />
-                    <TextBlock Text="Жилая" Grid.Row="3" Grid.Column="4" />
-                    <TextBlock Text="Кухня" Grid.Row="3" Grid.Column="6" />
-                    <TextBox x:Name="FullArea" Grid.Row="4" Grid.Column="2" />
-                    <TextBox x:Name="LivingArea" Grid.Row="4" Grid.Column="4" />
-                    <TextBox x:Name="KitchenArea" Grid.Row="4" Grid.Column="6" />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Text="Общая" />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="4"
+                            Text="Жилая" />
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="6"
+                            Text="Кухня" />
+                        <TextBox
+                            x:Name="FullArea"
+                            Grid.Row="4"
+                            Grid.Column="2" />
+                        <TextBox
+                            x:Name="LivingArea"
+                            Grid.Row="4"
+                            Grid.Column="4" />
+                        <TextBox
+                            x:Name="KitchenArea"
+                            Grid.Row="4"
+                            Grid.Column="6" />
 
-                    <GroupBox Header="Описание объекта" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="4" />
+                        <GroupBox
+                            Grid.Row="6"
+                            Grid.RowSpan="4"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="7"
+                            Header="Описание объекта" />
 
-                    <TextBlock Text="Количество комнат" Grid.Row="8" Grid.Column="2" />
-                    <Canvas Grid.Row="8" Grid.Column="4">
-                        <RadioButton Content="1" GroupName="QuantyRooms" />
-                        <RadioButton Content="2" GroupName="QuantyRooms" Canvas.Left="40" />
-                        <RadioButton Content="3" GroupName="QuantyRooms" Canvas.Left="80" />
-                        <RadioButton Content="4" GroupName="QuantyRooms" Canvas.Left="120" />
-                        <RadioButton Content="5" GroupName="QuantyRooms" Canvas.Left="160" />
-                        <RadioButton Content="Многокомнатная" GroupName="QuantyRooms" Canvas.Top="20" />
-                    </Canvas>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="2"
+                            Text="Количество комнат" />
+                        <Canvas
+                            Grid.Row="8"
+                            Grid.Column="4"
+                            Height="40">
+                            <RadioButton Content="1" GroupName="QuantyRooms" />
+                            <RadioButton
+                                Canvas.Left="30"
+                                Content="2"
+                                GroupName="QuantyRooms" />
+                            <RadioButton
+                                Canvas.Left="60"
+                                Content="3"
+                                GroupName="QuantyRooms" />
+                            <RadioButton
+                                Canvas.Left="90"
+                                Content="4"
+                                GroupName="QuantyRooms" />
+                            <RadioButton
+                                Canvas.Left="120"
+                                Content="5"
+                                GroupName="QuantyRooms" />
+                            <RadioButton
+                                Canvas.Top="20"
+                                Content="Многокомнатная"
+                                GroupName="QuantyRooms" />
+                        </Canvas>
 
-                    <TextBlock Text="Высота потолков, м." Grid.Row="10" Grid.Column="2" />
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="2"
+                            Text="Высота потолков, м." />
+                        <TextBox
+                            x:Name="CeilingHeight"
+                            Grid.Row="11"
+                            Grid.Column="2" />
 
-                </Grid>
-            </TabItem>
-            <TabItem Header="Документы">
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="4"
+                            Text="Этаж размещения" />
+                        <TextBox
+                            x:Name="PlacementFloor"
+                            Grid.Row="11"
+                            Grid.Column="4" />
 
-            </TabItem>
-            <TabItem Header="Фотографии">
+                        <Canvas
+                            Grid.Row="8"
+                            Grid.Column="6"
+                            Height="40">
+                            <TextBlock Text="Наличие перепланировок" />
+                            <RadioButton
+                                Canvas.Top="20"
+                                Content="Выявлено"
+                                GroupName="Renovation" />
+                            <RadioButton
+                                Canvas.Left="78"
+                                Canvas.Top="20"
+                                Content="Не выявлено"
+                                GroupName="Renovation" />
+                        </Canvas>
 
-            </TabItem>
-        </TabControl>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="6"
+                            Text="Выводы по правоуст. документам" />
+                        <Canvas
+                            Grid.Row="11"
+                            Grid.Column="6"
+                            Height="15"
+                            VerticalAlignment="Center">
+                            <RadioButton Content="Соответствуют" GroupName="Accordance" />
+                            <RadioButton
+                                Canvas.Left="105"
+                                Content="Не соответствуют"
+                                GroupName="Accordance" />
+                        </Canvas>
+
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="2"
+                            Text="Имущественные права" />
+                        <ComboBox
+                            Name="PropertyRight"
+                            Grid.Row="14"
+                            Grid.Column="2" />
+
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="4"
+                            Text="Доля" />
+                        <TextBox
+                            x:Name="Share"
+                            Grid.Row="14"
+                            Grid.Column="4" />
+
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="6"
+                            Text="Текущее использование" />
+                        <Canvas
+                            Grid.Row="14"
+                            Grid.Column="6"
+                            Height="15"
+                            VerticalAlignment="Center">
+                            <RadioButton Content="Жилая" GroupName="Usage" />
+                            <RadioButton
+                                Canvas.Left="60"
+                                Content="Нежилая"
+                                GroupName="Usage" />
+                        </Canvas>
+
+                        <TextBlock
+                            Grid.Row="16"
+                            Grid.Column="2"
+                            Text="Наличие обременений" />
+                        <ComboBox
+                            Name="ExistenceEncumbrance"
+                            Grid.Row="17"
+                            Grid.Column="2"
+                            VerticalAlignment="Top" />
+
+                        <TextBlock
+                            Grid.Row="16"
+                            Grid.Column="4"
+                            Text="Описание обременения" />
+                        <TextBox
+                            x:Name="EncumbranceDescription"
+                            Grid.Row="17"
+                            Grid.Column="4"
+                            Grid.ColumnSpan="3"
+                            Height="48" />
+
+                        <TextBlock
+                            Grid.Row="19"
+                            Grid.Column="2"
+                            Text="Система коммуникаций" />
+                        <ComboBox
+                            x:Name="SystemCommunication"
+                            Grid.Row="20"
+                            Grid.Column="2" />
+
+                        <TextBlock
+                            Grid.Row="19"
+                            Grid.Column="4"
+                            Text="Подключение коммуникаций" />
+                        <ComboBox
+                            x:Name="ConnectionCommunication"
+                            Grid.Row="20"
+                            Grid.Column="4" />
+
+                        <TextBlock
+                            Grid.Row="22"
+                            Grid.Column="2"
+                            Text="Вид из окон" />
+                        <ComboBox
+                            x:Name="ViewWindow"
+                            Grid.Row="23"
+                            Grid.Column="2" />
+
+                        <TextBlock
+                            Grid.Row="22"
+                            Grid.Column="4"
+                            Text="Наличие балконов/лоджий" />
+                        <ComboBox
+                            x:Name="Balkon"
+                            Grid.Row="23"
+                            Grid.Column="4" />
+
+                        <TextBlock
+                            Grid.Row="22"
+                            Grid.Column="6"
+                            Text="Остекление балконов/лоджий" />
+                        <ComboBox
+                            x:Name="GlazingBalcon"
+                            Grid.Row="23"
+                            Grid.Column="6" />
+
+                        <TextBlock
+                            Grid.Row="25"
+                            Grid.Column="2"
+                            Text="Качество ремонта" />
+                        <ComboBox
+                            x:Name="Repair"
+                            Grid.Row="26"
+                            Grid.Column="2" />
+
+                        <TextBlock
+                            Grid.Row="25"
+                            Grid.Column="4"
+                            Text="Санузел" />
+                        <ComboBox
+                            x:Name="Bathroom"
+                            Grid.Row="26"
+                            Grid.Column="4" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Документы" />
+                <TabItem Header="Фотографии" />
+            </TabControl>
+
+        </Grid>
     </ScrollViewer>
 </UserControl>
