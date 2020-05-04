@@ -663,9 +663,13 @@
                                             Content="Выбрать документ" />
                                         <TextBox
                                             Grid.Row="2"
-                                            Grid.ColumnSpan="2"
                                             Margin="5"
                                             Text="{Binding}" />
+                                        <Button
+                                            Grid.Column="1"
+                                            Margin="5"
+                                            Command="{Binding}"
+                                            Content="Удалить" />
 
                                     </Grid>
                                 </DataTemplate>
